@@ -1,3 +1,5 @@
-<div>
-    search
+<div class="main-container-search" ng-controller="searchController">
+    <input type="text" id="searchTxt" placeholder="search title movie"/>
+    <button class="btn btn-default" id="searchBtn" type="submit" ng-click="onSearch()">Search</button>
+    <results id="resultsList"></results>
 </div>
