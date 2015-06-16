@@ -1,3 +1,8 @@
 <div ng-controller="resultsController">
-    results
+    Results
+   <ul>
+       <li ng-repeat="item in searchModel.moviesFound" style="list-style: none">
+               <h1><a ui-sref="details({param:item.id})">{{item.name}}</a></h1>
+       </li>
+    </ul>
 </div>

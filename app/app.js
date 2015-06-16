@@ -3,34 +3,21 @@ mainApp.config(function($stateProvider){
     $stateProvider.
         state({
             name:'search',
+            url: '',
             templateUrl: 'parts/search.html'
         }).
         state({
+            name:'results',
+            url: 'results/',
+            templateUrl: 'parts/results.html'
+        }).
+        state({
             name:'details',
+            url: 'details/:param',
             templateUrl: 'parts/details.html'
         })
 }).run(function($state){
     $state.go('search');
 });
 
-mainApp.directive('search', function(){
-    return {
-        templateUrl: 'parts/results.html'
-    }
-})
-mainApp.controller('searchController', ['$scope', '$state', 'searchService', function($scope, $state, searchService){
-    console.log('searchController init');
-//    $scope.state = $state;
-    $scope.onSearch = function(){
-        console.log('start search: ' + searchTxt.value);
-        searchService.movieTitle = searchTxt.value;
-    };
-}]);
 
-mainApp.controller('resultsController', ['$scope', 'searchService', function($scope, searchService){
-    console.log('results init');
-    searchService.movieTitle
-    $scope.onItemClick = function(){
-        console.log('Item selectes: ');
-    }
-}])

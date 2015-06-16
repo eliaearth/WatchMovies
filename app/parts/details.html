@@ -1,3 +1,8 @@
-<div>
-    details
+<div ng-controller="detailsController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">{{selectedMovie.name}}</div>
+            <div class="col-md-6">{{selectedMovie.description.shortDescription}}</div>
+        </div>
+    </div>
 </div>
