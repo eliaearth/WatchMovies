@@ -1,8 +1,35 @@
-<div ng-controller="resultsController">
-    Results
-   <ul>
-       <li ng-repeat="item in searchModel.moviesFound" style="list-style: none">
-               <h1><a ui-sref="details({param:item.id})">{{item.name}}</a></h1>
-       </li>
-    </ul>
+<div class="main-container-results" ng-controller="resultsController">
+    <h1>Results</h1>
+	
+       <div ng-repeat="item in searchModel.moviesFound" style="padding-bottom:10px;padding-right:10px">
+			<div class="panel panel-default">
+				<div class="panel-heading">{{item.showname}}</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-4">
+								 <img src="{{item.image}}" alt="Smiley face" height="200" width="250"> 
+							</div>
+							<div class="col-lg-4 ">
+								</p>Seasons: {{item.seasons}}</p>
+								</p>Started: {{item.startdate}}</p>				
+								</p>Country of origin: {{item.originCountry}}</p>
+								</p>Latest episode: {{item.latestEpName}} on {{item.latestEpDate}}</p>
+								</p>Next episode: {{item.nextEpName}} - {{item.nextEpDate}}</p>
+							</div>
+							<div class="col-lg-4 ">
+								</p>Summary</p>
+								</p>{{item.summary}}</p>
+							 <a ui-sref="details({param:item.id})" class="btn btn-warning" role="button">Show episodes</a>
+							</div>
+								
+						</div>
+                    </div>
+				
+			</div>
+			</div>
+		
+	    </div>
+			   
+     
+   
 </div>

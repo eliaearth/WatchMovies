@@ -1,5 +1,7 @@
-<div class="main-container-search" ng-controller="searchController">
-    <input type="text" id="searchTxt" placeholder="search title movie" ng-model='searchModel.textTofind'/>
-    <button class="btn btn-default" id="searchBtn" type="submit" ng-click="onSearch()">Search</button>
+<div class="main-container-search input-group" ng-controller="searchController">
+    <input type="text" class="form-control" id="searchTxt" placeholder="Enter here the name of the show...." ng-model='searchModel.textTofind'/>
+		<span class="input-group-btn">
+			<button class="btn btn-default yellow" id="searchBtn" type="submit" ng-click="onSearch()">Search</button>
+		</span>
     <results id="resultsList"></results>
 </div>
