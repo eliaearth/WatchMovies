@@ -7,16 +7,17 @@
             console.log('searchController init');
             //$scope.state = $state;
             $scope.onSearchSuccess = function(response){
-                searchModel.moviesFound = response;
                 $log.error('Search success');
+                searchModel.moviesFound = response;
             };
             $scope.onSearchError = function(){
-               $log.error('Search error');
+                searchModel.moviesFound = {};
+                $log.warn('Search error');
             };
             $scope.onSearch = function(){
                 console.log('search text model = ' + $scope.searchModel.textTofind);
                 searchModel.textTofind = searchTxt.value;
-                searchService.getMovies(searchTxt.value).success(onSearchSuccess()).error(onSearchError());
+                searchService.getMovies(searchTxt.value).success($scope.onSearchSuccess).error($scope.onSearchError);
                 $state.go('results');
             };
         }
